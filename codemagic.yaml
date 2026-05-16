@@ -7,6 +7,8 @@ workflows:
     scripts:
       - name: Extract source
         script: unzip doa_rosario_hyperos3_flutter_source.zip
+      - name: Create Flutter project
+        script: flutter create --project-name doa_rosario_hyperos3 --org com.teddy tmp_project && cp -r tmp_project/android doa_rosario_hyperos3/android
       - name: Get packages
         script: cd doa_rosario_hyperos3 && flutter pub get
       - name: Build APK
