@@ -9,6 +9,8 @@ workflows:
         script: unzip doa_rosario_hyperos3_flutter_source.zip
       - name: Create Flutter project
         script: flutter create --project-name doa_rosario_hyperos3 --org com.teddy tmp_project && cp -r tmp_project/android doa_rosario_hyperos3/android
+      - name: Replace main.dart
+        script: cp lib/main.dart doa_rosario_hyperos3/lib/main.dart
       - name: Get packages
         script: cd doa_rosario_hyperos3 && flutter pub get
       - name: Build APK
